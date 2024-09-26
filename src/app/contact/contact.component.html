@@ -1,1 +1,32 @@
-<p>contact works!</p>
+<div class="flex flex-col justify-center w-full max-h-screen text-center mt-8">
+    <h2 class="text-2xl font-semibold">Te contactamos</h2>
+    <p class="mt-2 text-sm text-gray-600">Déjanos tus datos y te contactaremos lo antes posible</p>
+
+    <form [formGroup]="contactForm" class="w-5/6 mx-auto mt-5 bg-white p-8 shadow-md rounded-md" (ngSubmit)="submitForm()">
+        <div class="mb-4">
+            <label class="block text-left text-gray-700 font-semibold mb-1" for="name">Nombre</label>
+            <input type="text" id="name" formControlName="name" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-left text-gray-700 font-semibold mb-1" for="email">Email</label>
+            <input type="email" id="email" formControlName="email" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-left text-gray-700 font-semibold mb-1" for="phone">Celular</label>
+            <input type="tel" id="phone" formControlName="phone" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-left text-gray-700 font-semibold mb-1" for="message">Mensaje</label>
+            <textarea id="message" formControlName="message" rows="4" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" (click)="submitForm()" class="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600">Enviar</button>
+        </div>
+    </form>
+
+    <div *ngIf="formMessage" class="mt-4 text-green-500">¡Gracias por contactarnos! Te responderemos pronto.</div>
+</div>

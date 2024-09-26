@@ -5,6 +5,7 @@ import { WeAreComponent } from './we-are/we-are.component';
 import { ContactComponent } from './contact/contact.component';
 
 export const routes: Routes = [
+    {path: '', redirectTo: 'weAre', pathMatch: 'full'},
     {path: 'catalogo', component: CatalogoComponent },
     {path: 'bestP', component: BestPComponent},
     {path: 'weAre', component: WeAreComponent},
